@@ -42,16 +42,30 @@ main {
     gap: 20px;
 }
 
+select {
+    padding: 4px;
+    font-size: 18px;
+    background-color: var(--app-dark-bg);
+    color: #fff;
+    border: 1px solid #2f3344;
+}
+
 button{
     padding: 10px;
     color: #fff;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
+    border-radius: 4px;
     background-color: var(--app-orange);
 }
 
 .column {
     height: 80px;
     width: 80px;
-    background-color: var(--app-green);
+    background-color: #0f9;
+}
+
+.circle {
+    background-color: white;
+    border-radius: 50%;
 }
