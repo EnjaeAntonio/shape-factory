@@ -48,7 +48,7 @@ class Shape {
     }
 
     getInfo() {
-        return `${this._shape} & ${this._colour}`
+        return `${this._shape} & ${this._colours}`
     }    
 }    
 
@@ -59,11 +59,18 @@ function createShape(shapes, colours) {
     return newShape;
 }
 
+function grab(x) {
+    let index = x.getAttribute('data-number')
+    let colourCode = x.getAttribute('name')
+    output.innerText = `${index}: ${colourCode}`
+    console.log(colourCode)
+}
 
+
+const arr = [];
 
 function info(obj) {
     const parent = select('.select-box');
-    const arr = [];
 
     let createDiv = create('div');
 
@@ -101,23 +108,21 @@ function info(obj) {
             createDiv.style.backgroundColor = '#90f'
             break;
     }
+    createDiv.setAttribute('name', obj.getInfo())
+    createDiv.setAttribute('data-number', `${arr.length + 1}`)
+    createDiv.setAttribute('onclick', 'grab(this)')
+    
     parent.appendChild(createDiv);
-    arr.push(createDiv)
-};
+    arr.push(obj);
 
+};
 
 
 onEvent('click', createBtn, function() {
      info(createShape(shapes.value, colours.value));
-
-     for (let i = 0; i < 20; i++) {
-        
-     }
 });
 
-arr.forEach(element => {
-    
-});
+
 
 
 
