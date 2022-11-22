@@ -60,7 +60,7 @@ function createShape(shapes, colours) {
 }
 
 function grab(x) {
-    let index = x.getAttribute('data-number')
+    let index = x.getAttribute('number')
     let colourCode = x.getAttribute('name')
     output.innerText = `${index}: ${colourCode}`
     console.log(colourCode)
@@ -108,8 +108,9 @@ function info(obj) {
             createDiv.style.backgroundColor = '#90f'
             break;
     }
+
     createDiv.setAttribute('name', obj.getInfo())
-    createDiv.setAttribute('data-number', `${arr.length + 1}`)
+    createDiv.setAttribute('number', `${arr.length + 1}`)
     createDiv.setAttribute('onclick', 'grab(this)')
     
     parent.appendChild(createDiv);
