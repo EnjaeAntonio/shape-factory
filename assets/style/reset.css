@@ -6,12 +6,11 @@
 */
 :root {
   --app-dark-bg: #1a1d28;
-  --app-red: #ff3c57;
-  --app-green: #33ab4e;
-  --app-purple: #833cff;
-  --app-orange: #ff833c;
-  --app-blue: #3c57ff;
-  --app-blue-hover: #364ee6;
+  --app-green: #9f0;
+  --app-purple: #90f;
+  --app-orange: #f90;
+  --app-blue: #0f9;
+  --app-pink: #f09
  }
 
 *, *::before, *::after {
