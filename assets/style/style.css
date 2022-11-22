@@ -84,8 +84,12 @@ button{
     border-radius: 50%;
 }
 
+.output {
+    margin-top: 20px;
+}
 
 .output p {
     font-size: 20px;
     color: #fff;
+    text-align: center;
 }

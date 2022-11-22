@@ -121,6 +121,13 @@ function info(obj) {
 
 onEvent('click', createBtn, function() {
      info(createShape(shapes.value, colours.value));
+
+     if (arr.length >= 20) {
+        createBtn.disabled = true;
+        output.innerText = `Limit Exceeded`
+    }else if (shapes.selectedIndex == 0 || colours.selectedIndex == 0) {
+        output.innerText = `Select an option`
+    }
 });
 
 
