@@ -4,14 +4,7 @@
   A CSS reset style sheet is a list of rules that 'reset' all of the default 
   browser styles
 */
-:root {
-  --app-dark-bg: #1a1d28;
-  --app-green: #9f0;
-  --app-purple: #90f;
-  --app-orange: #f90;
-  --app-blue: #0f9;
-  --app-pink: #f09
- }
+
 
 *, *::before, *::after {
   box-sizing: border-box;

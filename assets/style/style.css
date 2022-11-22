@@ -1,5 +1,14 @@
 @import "./reset.css";
 
+:root {
+    --app-dark-bg: #1a1d28;
+    --app-green: #9f0;
+    --app-purple: #90f;
+    --app-orange: #f90;
+    --app-blue: #0f9;
+    --app-pink: #f09
+   }
+
 /*************************************************
 
 
@@ -10,60 +19,39 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 .container {
     width: min(100% - 30px, 1080px);
     margin-inline: auto;
 }
 
-header {
-    height: 56px;
-    background-color: var(--clr-primary);
-    overflow: hidden;
+.options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
-.title {
-    width: 40%;
-    height: 40px;
+.row {
+    background-color: var(--app-light-bg);
+    display: grid;
+    grid-template-rows: repeat(4, max-content);
+    grid-template-columns: repeat(5, min-content);
+    padding: 40px;
+    gap: 20px;
 }
 
-.title h1 {
-    font-size: 22px;
-    font-weight: 400;
+button{
+    padding: 10px;
     color: #fff;
-    line-height: 56px;
-    text-transform: uppercase;
-    letter-spacing: 0.2px;
-}
-
-nav {
-    width: 60%;
-    text-align: right;
-}
-
-nav ul {
-    list-style: none;
-}
-
-nav ul li{ 
-    display: inline;
-    line-height: 56px;
-    cursor: default;
-}
-
-nav ul li a {
-    font-size: 19px;
-    letter-spacing: 1px;
-    color: #fff;
+    font-size: 16px;
     font-weight: 600;
-    text-decoration: none;
-    cursor: pointer;
+    background-color: var(--app-orange);
 }
 
-nav ul li a:hover {
-    text-decoration: underline #add8e6;
-}
-
-nav ul li + li {
-    margin-left: 18px;
+.column {
+    height: 80px;
+    width: 80px;
+    background-color: var(--app-green);
 }
