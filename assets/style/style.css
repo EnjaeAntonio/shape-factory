@@ -5,7 +5,7 @@
     --app-green: #9f0;
     --app-purple: #90f;
     --app-orange: #f90;
-    --app-blue: #0f9;
+    --app-blue: #09f;
     --app-pink: #f09
    }
 
@@ -57,7 +57,7 @@ button{
     background-color: var(--app-orange);
 }
 
-.row {
+.select-box {
     display: grid;
     grid-template-rows: repeat(4, max-content);
     grid-template-columns: repeat(5, min-content);
@@ -66,15 +66,26 @@ button{
     gap: 20px;
     background-color: #15171f;
     margin-top: 20px;
+    height: 70vh;
+    width: 90vh;
+    overflow: hidden;
 }
 
-.column {
-    /* visibility: hidden; */
+
+.square {
     height: 100px;
     width: 100px;
-    background-color: #0f9;
 }
 
+
 .circle {
+    height: 100px;
+    width: 100px;
     border-radius: 50%;
+}
+
+
+.output p {
+    font-size: 20px;
+    color: #fff;
 }

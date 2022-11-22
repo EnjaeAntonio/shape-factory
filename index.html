@@ -10,50 +10,34 @@
         <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
         <link rel="stylesheet" href="assets/style/style.css" media="screen"> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script src="assets/script/index.js" type="module"></script>
+        <script src="assets/script/index.js" defer></script>
     </head>
     <body>
        <main>
            <section class="select-wrapper">
                 <h1>Shape Factory</h1>
                 <section class="options">
-                    <select class="shape-select">
+                    <select class="shapes">
                         <option value="">Choose a shape:</option>
-                        <option value="Square">Square</option>
-                        <option value="Circle">Circle</option>
+                        <option class="square-option" value="square">Square</option>
+                        <option class="circle-option" value="circle">Circle</option>
                     </select>
                 
-                    <select class="colour-select">
+                    <select class="colours">
                         <option value="">Choose a colour:</option>
-                        <option value="blue">Blue</option>
-                        <option value="green">Green</option>
-                        <option value="orange">Orange</option>
-                        <option value="pink">Pink</option>
-                        <option value="purple">Purple</option>
+                        <option class="blue" value="blue">Blue</option>
+                        <option class="green" value="green">Green</option>
+                        <option class="orange" value="orange">Orange</option>
+                        <option class="pink" value="pink">Pink</option>
+                        <option class="purple" value="purple">Purple</option>
                     </select>
+
                     <button class="create">Create</button>
                 </section>
                 <section class="row select-box">
-                    <div class="column"></div>
-                    <div class="column"></div>
-                    <div class="column"></div>
-                    <div class="column"></div>
-                    <div class="column"></div>
-                    <div class="column"></div>
-                    <div class="column"></div>
-                    <div class="column"></div>
-                    <div class="column"></div>
-                    <div class="column"></div>
-                    <div class="column"></div>
-                    <div class="column"></div>
-                    <div class="column"></div>
-                    <div class="column"></div>
-                    <div class="column"></div>
-                    <div class="column"></div>
-                    <div class="column"></div>
-                    <div class="column"></div>
-                    <div class="column"></div>
-                    <div class="column"></div>
+                </section>
+                <section class="output">
+                    <p></p>
                 </section>
             </section>
        </main>
