@@ -1,6 +1,7 @@
 'use strict';
 // import {onEvent, select, selectAll, create, log} from './utils';
 
+
 function onEvent(event, selector, callback) {
     return selector.addEventListener(event, callback);
 }
@@ -30,6 +31,7 @@ const createBtn = select('.create')
 const shapes = select('.shapes')
 const colours = select('.colours')
 const output = select('.output p')
+
 
 class Shape {
     constructor(shape, colours) {
@@ -72,10 +74,13 @@ const arr = [];
 
 function info(obj) {
     const parent = select('.select-box');
-
+    
     let createDiv = create('div');
 
-
+    createDiv.setAttribute('name', obj.getInfo())
+    createDiv.setAttribute('number', `${arr.length + 1  }`)
+    createDiv.setAttribute('onclick', 'grab(this)')
+    
     if (obj.getShape() == 'circle'){
         createDiv.classList.add('circle');
         createDiv.classList.remove('square');
@@ -84,8 +89,8 @@ function info(obj) {
         createDiv.classList.remove('circle');
     }
 
-    let colour = obj.getColour();
 
+    let colour = obj.getColour();
 
     switch(colour) {
 
@@ -109,16 +114,10 @@ function info(obj) {
             createDiv.style.backgroundColor = '#90f'
             break;
     }
-
-    createDiv.setAttribute('name', obj.getInfo())
-    createDiv.setAttribute('number', `${arr.length + 1  }`)
-    createDiv.setAttribute('onclick', 'grab(this)')
-    
     parent.appendChild(createDiv);
     arr.push(obj);
 
 };
-
 
 onEvent('click', createBtn, function() {
      info(createShape(shapes.value, colours.value));
@@ -130,23 +129,3 @@ onEvent('click', createBtn, function() {
         output.innerText = `Select an option`
     }
 });
-
-
-
-
-
-
-// In this assignment, you will develop a web application that allows users to create different shapes
-// with different colours and get information about them.
-// Directions and requirements
-// • Implement two select elements, one for the shapes and one for the colours.
-// • Create a box (grid) to contain at least 20 different shapes (circles and squares).
-// • Add the necessary style for circles and squares. Colours will be defined via JavaScript.
-// • Create a class named Shape with a constructor, 2 accessor properties (name and colour) and
-// 1 method - getInfo().
-// • Name and colour (actually _name and _colour) must be accessed through get properties.
-// • The ‘Create’ button will create a Shape object, save it in an array and add a new shape (div)
-// to the grid. This div is the HTML representation of the JavaScript object.
-// • Implement a function named createShape() to create and append a shape to the grid box.
-// • getInfo() returns the name of the shape and its colour. This method is called when the user
-// clicks on one of the shapes.
