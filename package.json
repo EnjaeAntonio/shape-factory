@@ -1,7 +1,7 @@
 {
   "name": "enjae_antonio_oop_assignment_two",
   "version": "1.0.0",
-  "description": "",
+  "description": "Click <a href=\"https://enjaeantonio.github.io/shape-factory/\">Here</a> to check out the demo.",
   "main": "index.js",
   "scripts": {
     "dev": "lite-server"
@@ -11,5 +11,13 @@
   "license": "ISC",
   "devDependencies": {
     "lite-server": "^2.6.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EnjaeAntonio/shape-factory.git"
+  },
+  "bugs": {
+    "url": "https://github.com/EnjaeAntonio/shape-factory/issues"
+  },
+  "homepage": "https://github.com/EnjaeAntonio/shape-factory#readme"
 }

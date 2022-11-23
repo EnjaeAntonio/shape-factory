@@ -1,7 +1,28 @@
 'use strict';
+// import {onEvent, select, selectAll, create, log} from './utils';
+
+function onEvent(event, selector, callback) {
+    return selector.addEventListener(event, callback);
+}
 
 
-import { onEvent, create, select } from './utils.js';
+function select(selector, parent = document) {
+    return parent.querySelector(selector);
+}
+
+function selectAll(selector, parent = document) {
+    return parent.querySelectorAll(selector);
+}
+
+
+function create(element, parent = document) {
+    return parent.createElement(element);
+}
+
+function log(content) {
+    console.log(content);
+}
+
 
 
 
@@ -11,8 +32,8 @@ const colours = select('.colours')
 const output = select('.output p')
 
 class Shape {
-    constructor(shapes, colours) {
-        this.shape = shapes;
+    constructor(shape, colours) {
+        this.shape = shape;
         this.colours = colours;
 
     }
@@ -24,16 +45,17 @@ class Shape {
 
     getShape() {
         this._shape = this.shape;
-        return this._shape
+        return this.shape
     }
 
     getInfo() {
-        return `${this.getShape()} ${this.getColour()}`
+        return `Properties: ${this._shape} & ${this._colours}`
     }    
 }    
 
 
-function createShape(shapes, colours) {        
+
+function createShape(shapes, colours) {    
     const newShape = new Shape(shapes, colours)
     return newShape;
 }
@@ -41,7 +63,7 @@ function createShape(shapes, colours) {
 function grab(x) {
     let index = x.getAttribute('number')
     let colourCode = x.getAttribute('name')
-    output.innerText = `Properties: #${index} ${colourCode}`
+    output.innerText = `${index}: ${colourCode}`
     console.log(colourCode)
 }
 
@@ -61,7 +83,6 @@ function info(obj) {
         createDiv.classList.add('square');
         createDiv.classList.remove('circle');
     }
-
 
     let colour = obj.getColour();
 
@@ -105,11 +126,12 @@ onEvent('click', createBtn, function() {
      if (arr.length >= 20) {
         createBtn.disabled = true;
         output.innerText = `Limit Exceeded`
-
     }else if (shapes.selectedIndex == 0 || colours.selectedIndex == 0) {
         output.innerText = `Select an option`
     }
 });
+
+
 
 
 
