@@ -1,28 +1,7 @@
 'use strict';
-// import {onEvent, select, selectAll, create, log} from './utils';
-
-function onEvent(event, selector, callback) {
-    return selector.addEventListener(event, callback);
-}
 
 
-function select(selector, parent = document) {
-    return parent.querySelector(selector);
-}
-
-function selectAll(selector, parent = document) {
-    return parent.querySelectorAll(selector);
-}
-
-
-function create(element, parent = document) {
-    return parent.createElement(element);
-}
-
-function log(content) {
-    console.log(content);
-}
-
+import { onEvent, create, select } from './utils.js';
 
 
 
@@ -32,9 +11,10 @@ const colours = select('.colours')
 const output = select('.output p')
 
 class Shape {
-    constructor(shape, colours) {
-        this.shape = shape;
+    constructor(shapes, colours) {
+        this.shape = shapes;
         this.colours = colours;
+
     }
     
     getColour(){
@@ -44,17 +24,16 @@ class Shape {
 
     getShape() {
         this._shape = this.shape;
-        return this.shape
+        return this._shape
     }
 
     getInfo() {
-        return `${this._shape} & ${this._colours}`
+        return `${this.getShape()} ${this.getColour()}`
     }    
 }    
 
 
-
-function createShape(shapes, colours) {    
+function createShape(shapes, colours) {        
     const newShape = new Shape(shapes, colours)
     return newShape;
 }
@@ -62,7 +41,7 @@ function createShape(shapes, colours) {
 function grab(x) {
     let index = x.getAttribute('number')
     let colourCode = x.getAttribute('name')
-    output.innerText = `${index}: ${colourCode}`
+    output.innerText = `Properties: #${index} ${colourCode}`
     console.log(colourCode)
 }
 
@@ -82,6 +61,7 @@ function info(obj) {
         createDiv.classList.add('square');
         createDiv.classList.remove('circle');
     }
+
 
     let colour = obj.getColour();
 
@@ -110,7 +90,7 @@ function info(obj) {
     }
 
     createDiv.setAttribute('name', obj.getInfo())
-    createDiv.setAttribute('number', `${arr.length + 1}`)
+    createDiv.setAttribute('number', `${arr.length + 1  }`)
     createDiv.setAttribute('onclick', 'grab(this)')
     
     parent.appendChild(createDiv);
@@ -125,12 +105,11 @@ onEvent('click', createBtn, function() {
      if (arr.length >= 20) {
         createBtn.disabled = true;
         output.innerText = `Limit Exceeded`
+
     }else if (shapes.selectedIndex == 0 || colours.selectedIndex == 0) {
         output.innerText = `Select an option`
     }
 });
-
-
 
 
 
