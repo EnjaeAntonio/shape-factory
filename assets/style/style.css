@@ -93,3 +93,16 @@ button{
     color: #fff;
     text-align: center;
 }
+
+@media (max-width: 428px) {
+    .select-box {
+      width: 40vh;
+      grid-template-rows: repeat(2, max-content);
+      grid-template-columns: repeat(3, min-content);
+    }
+    
+    .square, .circle {
+        height: 82px;
+        width: 82px;
+    }
+}
