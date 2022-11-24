@@ -47,11 +47,11 @@ class Shape {
 
     getShape() {
         this._shape = this.shape;
-        return this.shape
+        return this._shape
     }
 
     getInfo() {
-        return `Properties: ${this._shape} & ${this._colours}`
+        return `Properties: ${this.shape} & ${this.colours}`
     }    
 }    
 
